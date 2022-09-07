@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from './components/Header';
 import Form from './components/Form';
 
 import './App.css';
 
 const App = () => {
+
+  const [input, setInput] = useState("");
+  const [work, setWork] = useState([]);
   return (
     <div className="container">
       <div className="app-wrapper">
@@ -12,7 +15,12 @@ const App = () => {
           <Header/>
         </div>
         <div>
-          <Form/>
+          <Form
+          input={input}
+          setInput={setInput}
+          work={work}
+          setWork={setWork}
+          />
         </div>
       </div>
     </div>
