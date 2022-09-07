@@ -1,14 +1,14 @@
 import React from 'react'
 import {v4 as uuidv4} from "uuid";
 
-const Form = ({input, setInput, work, setWork}) => {
+const Form = ({input, setInput, works, setWorks}) => {
 
     const onInputChange = (event) => {
         setInput(event.target.value);
     };
     const onFormSubmit = (event) => {
         event.preventDefault();
-        setWork([...work, {id: uuidv4(), title: input, completed: false}]);
+        setWorks([...works, {id: uuidv4(), title: input, completed: false}]);
         setInput("");
     };
 

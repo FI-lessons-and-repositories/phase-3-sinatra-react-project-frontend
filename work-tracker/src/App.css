@@ -53,7 +53,7 @@
 
 .list-work{
   display: flex;
-  margin: 25px 0;
+  margin: 20px 0;
   border: 1px, solid #ccc;
   border-radius: 10px;
   padding: 10px;
@@ -94,9 +94,9 @@
 
 
 .list{
-  width: 220px;
-  background-color: #12343b;
-  border: none;
+  width: 2220px;
+  background-color: #5bb44a;
+  border: 1px#ccc;
   color: #ccc;
   font-size: 20px;
   padding-left: 10px;
