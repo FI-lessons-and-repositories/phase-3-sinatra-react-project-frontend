@@ -23,6 +23,7 @@ const App = () => {
            todos={todos}
            setTodos={setTodos}
            editTodo={editTodo}
+           setEditTodo={setEditTodo}
           />
         </div>
         <div>
