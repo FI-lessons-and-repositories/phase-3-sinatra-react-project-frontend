@@ -1,7 +1,9 @@
 import React, {useEffect} from 'react'
 import {v4 as uuidv4} from "uuid";
 
-const inspirationAPI = "http://localhost:9292/assignments";
+const assignmentAPI = "http://localhost:9292/assignments";
+
+const authorAPI =`http://localhost:9292//workauthors`
 
 const Form = ({input, setInput, todos, setTodos, editTodo, setEditTodo}) => {
 
