@@ -1,22 +1,19 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+import Assignments from './assignment/Assignments'
 
 function Navbar() {
   return (
     <div className='nav'>
-        <div className='navtest'>
-        <h3>openFlights</h3>
-        <div className='nav3'>
-        <h3 > <button>Home</button></h3>
-        <h3> <button>Log out</button> </h3>
-        </div>
+       <ul className='navbar-nav'>
+            <li className='nav-item'>
+                <Link className='nav-link' to='/'>Home</Link>
+            </li>
+            <li className='navbar-nav'>
+                <Link className='nav-link' to='/work'>WorkAssigning</Link>
+            </li>
 
-
-        </div>
-
-
-
-
-
+        </ul>
     </div>
   )
 }

@@ -1,13 +1,13 @@
 import React, {useState} from 'react'
 
-function NewWork({onHandleAddPost, setIsFilledIn}){
+function WorkTodo({onHandleAddPost}){
     const [setAuthor]=useState('')
     const [setWork]=useState('')
     const [setCategory]=useState('')
     function handleSubmit(e){
          e.preventDefault()
         e.target.reset();
-        fetch("http://localhost:9292/reviews", {
+        fetch("http://localhost:9292/works", {
             method: "POST",
             headers: {"Content-Type":"application/json"},
             body: JSON.stringify({
@@ -20,21 +20,21 @@ function NewWork({onHandleAddPost, setIsFilledIn}){
     }
     return (
         <div className="posts" style={{margin:"auto", width:'60%', height: 100+"vh", color:"black"}}>
-            <h1 style={{textAlign:"center", marginTop: 50 +"px"}}>Add New reviews</h1>
+            <h1 style={{textAlign:"center", marginTop: 50 +"px"}}>Add New Work</h1>
             <form className="new-post" onSubmit={handleSubmit}>
             <div className="new-post">
-                    <label >image_url: </label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="image"  onChange={(e)=>setAuthor(e.target.value)} required/>
+                    <label >Author: </label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="author"  onChange={(e)=>setAuthor(e.target.value)} required/>
                 </div>
                 <div>
-                    <label for="exampleFormControlInput1" class="form-label">slug:</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="slug"  onChange={(e)=>setWork(e.target.value)} required/>
+                    <label for="exampleFormControlInput1" class="form-label">Category: </label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="category"  onChange={(e)=>setWork(e.target.value)} required/>
                 </div>
                 <div className="new-post">
-                    <label  for="exampleFormControlTextarea1" class="form-label">description: </label>
-                    <textarea type="text" class="form-control" id="exampleFormControlTextarea1" rows="5" onChange={(e)=>setCategory(e.target.value)} required/>
+                    <label  for="exampleFormControlTextarea1" class="form-label">Work: </label>
+                    <textarea type="text" class="form-control" id="exampleFormControlTextarea1" placeholder="work" onChange={(e)=>setCategory(e.target.value)} required/>
                 </div>
-               <button type="submit">Submit New Post</button>
+               <button type="submit">Submit New Work</button>
             </form>
         </div>
     )

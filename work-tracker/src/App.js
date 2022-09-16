@@ -1,41 +1,33 @@
-import React, {useState} from 'react';
-import Header from './components/Header';
-import Form from './components/Form';
-import WorkTodo from './components/WorkTodo';
+import React, { useState,useEffect } from 'react'
+import Navbar from './components/Navbar'
+import About from './components/About'
+import Header from './components/Header'
+import WorkTodo from './components/WorkTodo'
+import AssignmentApp from './components/assignment/AssignmentApp'
+import Assignments from './components/assignment/Assignments'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
-import './App.css';
 
-const App = () => {
 
-  const [input, setInput] = useState("");
-  const [todos, setTodos] = useState([]);
-  const [editTodo, setEditTodo] = useState(null)
+function App() {
+
+  const [setAuthor]=useState('')
+    const [setWork]=useState('')
+    const [setCategory]=useState('')
+
   return (
-    <div className="container">
-      <div className="app-wrapper">
-        <div>
-          <Header/>
-        </div>
-        <div>
-          <Form
-           input={input}
-           setInput={setInput}
-           todos={todos}
-           setTodos={setTodos}
-           editTodo={editTodo}
-           setEditTodo={setEditTodo}
-          />
-        </div>
-        <div>
-         <WorkTodo
-          todos={todos}
-          setTodos={setTodos}
-          setEditTodo={setEditTodo}
-          />
-        </div>
+    <Router>
+      <div>
+        <Navbar/>
       </div>
-    </div>
-  );
+      <Routes>
+       {/* <Route exact path='/' element={<Assignments/>}/> */}
+       <Route exact path='/work' element={<AssignmentApp/>}/>
+      </Routes>
+    </Router>
+
+  )
 }
 
-export default App;
+
+export default App
